@@ -1,0 +1,139 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.calculator {
+  background-color: black;
+  padding: 24px;
+}
+
+.calculator-input:focus {
+  outline: none;
+}
+
+.calculator-input {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 70px;
+  margin: 0 auto 16px -5px;
+  background-color: black;
+  color: white;
+  font-size: 80px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin-bottom: 16px;
+}
+
+.button {
+  border-radius: 50%;
+  font-size: 34px;
+  width: 83px;
+  height: 83px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.button-0 {
+  border-radius: 55px;
+  width: 100%;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  text-align: left;
+  padding-left: 42px;
+}
+
+.font-black {
+  color: #000000;
+}
+
+.bg-gray {
+  background-color: #333333;
+}
+
+.bg-light-gray {
+  background-color: #a6a6a6;
+}
+
+.bg-orange {
+  background-color: #fe9603;
+}
+
+.active-action {
+  background-color: #935704;
+}
+
+.history-button {
+  cursor: pointer;
+  width: 100%;
+  height: 83px;
+  border-radius: 55px;
+  font-size: 34px;
+}
+
+.history {
+  width: 362px;
+  height: 455px;
+  display: none;
+  margin-bottom: 16px;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.history-item {
+  width: 100%;
+  padding: 8px 0;
+  border-bottom: 1px solid #fe9603;
+  cursor: pointer;
+}
+
+.result {
+  font-size: 28px;
+  color: #a6a6a6;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  height: 1.2em;
+  white-space: nowrap;
+}
+
+.equation {
+  font-size: 20px;
+  color: #333333;;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  height: 1.2em;
+  white-space: nowrap;
+
+}
