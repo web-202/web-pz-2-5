@@ -1,0 +1,142 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  padding: 150px;
+}
+
+.calculator {
+  width: 450px;
+  height: 630px;
+  background-color: black;
+  display: grid;
+  grid-template-rows: 18% 70%;
+  padding: 15px;
+  gap: 2%;
+}
+
+.results {
+  background-color: black;
+  width: 250px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: start;
+  border-radius: 0 0 20px;
+  padding-left: 15px;
+}
+
+.colors {
+  display: flex;
+  flex-direction: column;
+}
+
+.colors h1 {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.colors-selector {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px ;
+}
+
+.colors-selector__simple {
+  background-color: orange;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.colors-selector__expert {
+  background-color: mediumpurple;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.results span{
+  font-size: 25px;
+  font-weight: bold;
+  color: orange;
+  cursor: pointer;
+}
+
+.results span:hover {
+  text-shadow: 2px 2px white;
+}
+
+.calculator__output {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-size: 100px;
+  max-width: 100%;
+}
+
+.calculator__functionality {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 20%);
+}
+
+.calculator__functionality__el {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.el__button {
+  width: 20%;
+  height: 85%;
+  border-radius: 50px;
+  border-style: none;
+  color: black;
+  font-size: 40px;
+  background-color: lightgrey;
+}
+
+.el__button:hover {
+  border: 2px darkgrey solid;
+}
+
+.el__button-zero {
+  width: 44%;
+  height: 85%;
+  border-radius: 50px;
+  border-style: none;
+  color: white;
+  font-size: 40px;
+  padding-right: 25%;
+}
+
+.el__button-zero:hover {
+  border: 2px darkgrey solid;
+}
+
+.button-number {
+  background-color: gray;
+  color: white;
+}
+
+.button-fun {
+  background-color: orange;
+  color: white;
+  font-size: 50px;
+}
