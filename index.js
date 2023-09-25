@@ -132,3 +132,20 @@ function paste() {
       }
     })
 }
+
+function initPicker(pickerId) {
+  document.getElementById(pickerId).click()
+
+}
+
+function changeColor(picker, classToChange) {
+  const selectedColor = picker.value
+  const styleSheet = document.styleSheets[0]
+
+  for (const cssRule of styleSheet.cssRules) {
+    if (cssRule.selectorText === '.' + classToChange) {
+      cssRule.style.setProperty('background-color', selectedColor)
+      break;
+    }
+  }
+}

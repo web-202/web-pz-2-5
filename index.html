@@ -11,7 +11,7 @@
   <title>Calculator</title>
 </head>
 <body>
-  <div class="container">
+  <div class="container black">
     <div class="calculator">
       <div class="display">
         <input id="result" type="number"
@@ -75,6 +75,34 @@
           <button onclick="copy()"
                   class="btn gray double">COPY</button>
           <button onclick="paste()" class="btn gray double">PAST</button>
+        </div>
+
+        Change colors
+
+        <div class="row">
+          <input onchange="changeColor(this, 'black')"
+                 id="pickerBlack"
+                 type="color" class="picker">
+          <button onclick="initPicker('pickerBlack')"
+                  class="btn black"></button>
+
+          <input onchange="changeColor(this, 'dark')"
+                 id="pickerDark"
+                 type="color" class="picker">
+          <button onclick="initPicker('pickerDark')"
+                  class="btn dark"></button>
+
+          <input onchange="changeColor(this, 'gray')"
+                 id="pickerGray"
+                 type="color" class="picker">
+          <button onclick="initPicker('pickerGray')"
+                  class="btn gray"></button>
+
+          <input onchange="changeColor(this, 'orange')"
+                 id="pickerOrange"
+                 type="color" class="picker">
+          <button onclick="initPicker('pickerOrange')"
+                  class="btn orange"></button>
         </div>
       </div>
     </div>
