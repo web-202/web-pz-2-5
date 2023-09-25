@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="./main.css">
+
+  <title>Calculator</title>
+</head>
+<body>
+  <div class="container">
+    <div class="calculator">
+      <div class="display">
+        <p id="result"
+           class="result">0</p>
+      </div>
+      <div class="interface">
+        <div class="row">
+          <button onclick="resetAll()"
+                  class="btn gray">AC</button>
+          <button onclick="reverseSign()"
+                  class="btn gray">+/-</button>
+          <button onclick="percentNumber()" class="btn gray">%</button>
+          <button onclick="clickOperator('/')"
+                  class="btn orange">÷</button>
+        </div>
+
+        <div class="row">
+          <button onclick="clickNumber(7)"
+                  class="btn dark">7</button>
+          <button onclick="clickNumber(9)"
+                  class="btn dark">8</button>
+          <button onclick="clickNumber(9)"
+                  class="btn dark">9</button>
+          <button onclick="clickOperator('*')"
+                  class="btn orange">x</button>
+        </div>
+
+        <div class="row">
+          <button onclick="clickNumber(4)"
+                  class="btn dark">4</button>
+          <button onclick="clickNumber(5)"
+                  class="btn dark">5</button>
+          <button onclick="clickNumber(6)"
+                  class="btn dark">6</button>
+          <button onclick="clickOperator('-')"
+                  class="btn orange">-</button>
+        </div>
+
+        <div class="row">
+          <button onclick="clickNumber(1)"
+                  class="btn dark">1</button>
+          <button onclick="clickNumber(2)"
+                  class="btn dark">2</button>
+          <button onclick="clickNumber(3)"
+                  class="btn dark">3</button>
+          <button onclick="clickOperator('+')"
+                  class="btn orange">+</button>
+        </div>
+
+        <div class="row">
+          <button onclick="clickNumber(0)"
+                  class="btn dark double">0</button>
+          <button onclick="clickDot()"
+                  class="btn dark">.</button>
+          <button onclick="executeStatement()"
+                  class="btn orange">=</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="./index.js"></script>
+</body>
+</html>
