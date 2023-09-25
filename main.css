@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
 }
-
 .container {
   height: 100vh;
   display: flex;
@@ -18,12 +17,13 @@
   color: white;
 }
 
-.display {
-  font-size: 42px;
-}
-
 .result {
+  font-size: 25px;
+  width: 100%;
   text-align: right;
+  background: none;
+  border: none;
+  color: white;
 }
 
 .interface {

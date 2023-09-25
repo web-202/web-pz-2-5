@@ -14,8 +14,8 @@
   <div class="container">
     <div class="calculator">
       <div class="display">
-        <p id="result"
-           class="result">0</p>
+        <input id="result" type="number"
+           class="result" value="0" readonly>
       </div>
       <div class="interface">
         <div class="row">
@@ -23,7 +23,8 @@
                   class="btn gray">AC</button>
           <button onclick="reverseSign()"
                   class="btn gray">+/-</button>
-          <button onclick="percentNumber()" class="btn gray">%</button>
+          <button onclick="percentNumber()"
+                  class="btn gray">%</button>
           <button onclick="clickOperator('/')"
                   class="btn orange">÷</button>
         </div>
@@ -68,6 +69,12 @@
                   class="btn dark">.</button>
           <button onclick="executeStatement()"
                   class="btn orange">=</button>
+        </div>
+
+        <div class="row">
+          <button onclick="copy()"
+                  class="btn gray double">COPY</button>
+          <button onclick="paste()" class="btn gray double">PAST</button>
         </div>
       </div>
     </div>

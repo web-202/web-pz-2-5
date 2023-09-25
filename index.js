@@ -2,10 +2,10 @@ let number = undefined
 let secondNumber = undefined
 let operator = undefined
 
-const resultEl = document.getElementById('result')
+const resultInputEl = document.getElementById('result')
 
 function resetDisplay() {
-  resultEl.textContent = '0'
+  resultInputEl.value = '0'
 
   return '';
 }
@@ -19,22 +19,22 @@ function resetAll() {
 }
 
 function percentNumber() {
-  resultEl.textContent = (parseFloat(resultEl.textContent) / 100).toString()
+  resultInputEl.value = (parseFloat(resultInputEl.value) / 100).toString()
 }
 
 function clickNumber(number) {
-  let oldResult = resultEl.textContent
+  let oldResult = resultInputEl.value
 
   if (oldResult === '0') {
     oldResult = resetDisplay()
   }
 
   oldResult += number
-  resultEl.textContent = oldResult
+  resultInputEl.value = oldResult
 }
 
 function initNumber() {
-  number = parseFloat(resultEl.textContent)
+  number = parseFloat(resultInputEl.value)
 }
 
 function initOperator(op) {
@@ -58,21 +58,20 @@ function clickOperator(operator) {
 }
 
 function clickDot() {
-  if (resultEl.textContent.includes('.')) {
+  if (resultInputEl.value.includes('.')) {
     return;
   }
-  resultEl.textContent = resultEl.textContent + '.'
+  resultInputEl.value = resultInputEl.value + '.'
 }
 
 function reverseSign() {
-  resultEl.textContent = (parseFloat(resultEl.textContent) * -1).toString()
+  resultInputEl.value = (parseFloat(resultInputEl.value) * -1).toString()
 }
-
 
 function addNumbers(number, secondNumber) {
   number = number.toString()
   secondNumber = secondNumber.toString()
-  let res =  parseFloat(number) + parseFloat(secondNumber);
+  let res = parseFloat(number) + parseFloat(secondNumber);
   let decFirst = number.split('.')[1] === undefined ? 0 : number.split('.')[1].length
   let decSecond = secondNumber.split('.')[1] === undefined ? 0 : secondNumber.split('.')[1].length
   let longestRounding = Math.max(decFirst, decSecond)
@@ -90,7 +89,7 @@ function executeStatement() {
   }
 
   if (secondNumber === undefined) {
-    secondNumber = parseFloat(resultEl.textContent)
+    secondNumber = parseFloat(resultInputEl.value)
   }
 
   let result = 0;
@@ -113,9 +112,23 @@ function executeStatement() {
   }
 
   number = result;
-  resultEl.textContent = result
+  resultInputEl.value = result
 }
 
+function copy() {
+  navigator.clipboard.writeText(resultInputEl.value)
+    .then(() => {
+    })
+}
 
-
-
+function paste() {
+  navigator.clipboard.readText()
+    .then((clipboardText) => {
+      if (typeof clipboardText != "string") {
+        return
+      }
+      if (!isNaN(parseFloat(clipboardText))) {
+        resultInputEl.value = parseFloat(clipboardText)
+      }
+    })
+}
