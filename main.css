@@ -1,0 +1,73 @@
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.result{
+  color:white;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  height: 2vh;
+}
+
+.row {
+  display: grid;
+  gap: 6px;
+  margin-top: 6px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.row-special {
+  display: grid;
+  gap: 6px;
+  margin-top: 6px;
+  grid-template-columns: 2fr 1fr 1fr;
+}
+
+.calculator{
+  padding: 6px;
+  padding-top: 30px;
+  background: black;
+}
+
+.btn {
+  border: none;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fefefe;
+  height: 40px;
+  width: 40px;
+}
+
+.btn_number{
+  background: #333333;
+}
+
+
+.zero{
+  width: 80px;
+  border-radius: 20px;
+}
+
+.btn_action{
+  background: #FF8E00;
+}
+
+.btn_calculate{
+  background: #FF8E00;
+}
+
+.btn_percents{
+  background: #A6A6A6;
+}
+
+.btn_clear{
+  background: #A6A6A6;
+
+}
+
