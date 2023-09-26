@@ -1,13 +1,18 @@
 (function () {
+  const calculatorDiv = document.querySelector(".calculator")
   const buttonsContainer = document.querySelector(".buttons");
   const result = document.querySelector(".calculator-input");
   const historyButton = document.querySelector(".history-button");
   const historyDiv = document.querySelector(".history");
   const actionElements = buttonsContainer.querySelectorAll('.action');
+  const bgColorInput = document.querySelector("#bg-color-input")
+  const textColorInput = document.querySelector("#text-color-input")
+
   let currentAction = null;
   let multiplyAction = null;
   let lastNumber = null;
   let isRemoved = false
+
 
   buttonsContainer.addEventListener("click", (event) => {
     const target = event.target;
@@ -27,6 +32,13 @@
       handleEqualClick();
     }
   });
+
+  calculatorDiv.addEventListener("contextmenu", (event) => {
+    event.preventDefault()
+    const targetElement = event.target;
+    targetElement.style.backgroundColor = bgColorInput.value;
+    targetElement.style.color = textColorInput.value;
+  })
 
   function handleNumberClick(number) {
     if (currentAction !== null && !isRemoved) {
@@ -115,7 +127,7 @@
     resultDiv.className = "result"
     resultDiv.textContent = res
 
-    resultDiv.addEventListener("contextmenu", (event) => {
+    resultDiv.addEventListener("dblclick", (event) => {
       event.preventDefault()
       navigator.clipboard.writeText(res);
     })
@@ -141,7 +153,7 @@
   }
 
   historyButton.addEventListener("click", () => {
-    if(historyButton.textContent === "History") {
+    if (historyButton.textContent === "History") {
       buttonsContainer.style.display = "none"
       historyButton.textContent = "Back"
       historyDiv.style.display = "flex"
