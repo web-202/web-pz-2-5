@@ -31,7 +31,7 @@ function calculateFactorial(n) {
   for (let i = 2; i <= n; i++) {
     multiply(result, i);
   }
-  return result.reverse().join("");
+  return result.join("");
 }
 
 function multiply(arr, multiplier) {
