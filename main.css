@@ -7,10 +7,14 @@ body {
 
 .result{
   color:white;
-  display: flex;
+  text-align: right;
   justify-content: right;
   align-items: center;
-  height: 2vh;
+  min-height: 2vh;
+  width: 190px;
+  white-space: normal;
+  word-wrap: break-word;
+  margin-bottom: 15px;
 }
 
 .row {

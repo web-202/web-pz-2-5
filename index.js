@@ -21,22 +21,36 @@ actionsBtn.forEach(btn => {
 })
 
 
-function factorial(n) {
-  let answer = 1;
-  if (n == 0 || n == 1) {
-    return answer;
-  } else if (n > 1) {
-    for (let i = n; i >= 1; i--) {
-      answer = answer * i;
-    }
-    return answer;
-  } else {
-    alert("Number must be positive")
+function calculateFactorial(n) {
+  if (n < 0) {
+    return "NaN"; // Factorial is undefined for negative numbers
+  }
+
+  const result = [1];
+
+  for (let i = 2; i <= n; i++) {
+    multiply(result, i);
+  }
+  return result.reverse().join("");
+}
+
+function multiply(arr, multiplier) {
+  let carry = 0;
+
+  for (let i = arr.length - 1; i >= 0; i--) {
+    const product = arr[i] * multiplier + carry;
+    arr[i] = product % 10;
+    carry = Math.floor(product / 10);
+  }
+
+  while (carry > 0) {
+    arr.unshift(carry % 10);
+    carry = Math.floor(carry / 10);
   }
 }
 
 factorialBtn.addEventListener("click", () => {
-  resultView.textContent = factorial(Number(resultView.textContent))
+  resultView.textContent = calculateFactorial(Number(resultView.textContent))
 })
 
 calculateBtn.addEventListener("click", () => {
