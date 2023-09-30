@@ -51,6 +51,14 @@ const multiplyOnDivide = () => {
   }
 }
 
+const covertToBinary = () => {
+  try {
+    outputDisplay.textContent = parseInt((document.getElementById('output-display').textContent), 10).toString(2);
+  } catch (error) {
+    outputDisplay.textContent = 'Error';
+  }
+}
+
 const divisionByPercentage = () => {
   outputDisplay.textContent = outputDisplay.textContent / 100
 }

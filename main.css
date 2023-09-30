@@ -102,6 +102,29 @@ body {
   align-items: center;
 }
 
+.calculator__functionality__el-convert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.el__button-convert {
+  width: 90%;
+  height: 85%;
+  border-radius: 50px;
+  border-style: none;
+  color: orange;
+  font-size: 30px;
+  padding: 10px;
+  background-color: lightgrey;
+  cursor: pointer;
+}
+
+.el__button-convert:hover {
+  border: 2px darkgrey solid;
+}
+
 .el__button {
   width: 20%;
   height: 85%;
@@ -110,6 +133,7 @@ body {
   color: black;
   font-size: 40px;
   background-color: lightgrey;
+  cursor: pointer;
 }
 
 .el__button:hover {
