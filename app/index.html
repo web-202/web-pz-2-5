@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
     <div class="calc">
         <div class="calc-screen">
@@ -32,62 +34,11 @@
             <div class="btn zero bg-grey" onclick="appendDigit('0')">0</div>
             <div class="btn dot bg-grey" onclick="appendDecimal('.')">.</div>
             <div class="btn equal bg-orange" onclick="calculateResult()">=</div>
+            <div class="btn fib bg-grey" onclick="calculateFibonacci()">Fib</div>
         </div>
     </div>
 
-    <script>
-        let currentInput = "0";
-
-        function updateDisplay() {
-            document.getElementById("result").textContent = currentInput;
-        }
-
-        function clearDisplay() {
-            currentInput = "0";
-            updateDisplay();
-        }
-
-        function appendDigit(digit) {
-            if (currentInput === "0") {
-                currentInput = digit;
-            } else {
-                currentInput += digit;
-            }
-            updateDisplay();
-        }
-
-        function appendDecimal(decimal) {
-            if (!currentInput.includes(decimal)) {
-                currentInput += decimal;
-            }
-            updateDisplay();
-        }
-
-        function toggleSign() {
-            currentInput = (parseFloat(currentInput) * -1).toString();
-            updateDisplay();
-        }
-
-        function applyPercent() {
-            currentInput = (parseFloat(currentInput) / 100).toString();
-            updateDisplay();
-        }
-
-        function appendOperator(operator) {
-            currentInput += ` ${operator} `;
-            updateDisplay();
-        }
-
-        function calculateResult() {
-            try {
-                currentInput = eval(currentInput).toString();
-                updateDisplay();
-            } catch (error) {
-                currentInput = "Error";
-                updateDisplay();
-            }
-        }
-    </script>
+    <script src="./main.js"></script>
 </body>
-</html>
 
+</html>
