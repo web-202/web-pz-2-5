@@ -32,7 +32,7 @@
         'seven eigth nine mylti'
         'four five six minus'
         'one two three plus'
-        'zero zero dot equal';
+        'zero factorial dot equal';
     grid-gap: 7px;
     justify-items: center;
 }
@@ -47,12 +47,6 @@
     font-size: 1.5rem;
     cursor: pointer;
     user-select: none;
-}
-
-.btn.zero {
-    grid-area: zero;
-    width: 100%;
-    border-radius: 34px;
 }
 
 .btn:hover {

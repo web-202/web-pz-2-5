@@ -4,7 +4,7 @@ let sign = '';
 let finish = false;
 
 const digit = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
-const action = ['-', '+', '×', '÷', '%', '+/-'];
+const action = ['-', '+', '×', '÷', '%', '+/-', '!'];
 
 const out = document.querySelector('.calculate_screen p');
 
@@ -55,6 +55,10 @@ document.querySelector('.buttons').onclick = (event) => {
             out.textContent = a;
             return;
         }
+        else if (key === '!'){
+            out.textContent = factorial(a);
+            return;
+        }
         else {
             sign = key;
             out.textContent = sign;
@@ -94,3 +98,6 @@ document.querySelector('.buttons').onclick = (event) => {
     
 }
 
+function factorial(n) {
+    return (n != 1) ? n * factorial(n - 1) : 1;
+  }
