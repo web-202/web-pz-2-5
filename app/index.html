@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="calc">
+        <div class="calc-screen">
+            <p id="result">0</p>
+        </div>
+        <div class="buttons">
+            <div class="btn ac bg-grey" onclick="clearDisplay()">AC</div>
+            <div class="btn plus-minus bg-grey" onclick="toggleSign()">+/-</div>
+            <div class="btn percent bg-grey" onclick="applyPercent()">%</div>
+            <div class="btn division bg-orange" onclick="appendOperator('/')">/</div>
+            <!-- Добавьте обработчики для остальных кнопок здесь -->
+            <div class="btn seven bg-grey" onclick="appendDigit('7')">7</div>
+            <div class="btn eight bg-grey" onclick="appendDigit('8')">8</div>
+            <div class="btn nine bg-grey" onclick="appendDigit('9')">9</div>
+            <div class="btn multi bg-orange" onclick="appendOperator('*')">*</div>
+            <div class="btn four bg-grey" onclick="appendDigit('4')">4</div>
+            <div class="btn five bg-grey" onclick="appendDigit('5')">5</div>
+            <div class="btn six bg-grey" onclick="appendDigit('6')">6</div>
+            <div class="btn minus bg-orange" onclick="appendOperator('-')">-</div>
+            <div class="btn one bg-grey" onclick="appendDigit('1')">1</div>
+            <div class="btn two bg-grey" onclick="appendDigit('2')">2</div>
+            <div class="btn three bg-grey" onclick="appendDigit('3')">3</div>
+            <div class="btn plus bg-orange" onclick="appendOperator('+')">+</div>
+            <div class="btn zero bg-grey" onclick="appendDigit('0')">0</div>
+            <div class="btn dot bg-grey" onclick="appendDecimal('.')">.</div>
+            <div class="btn equal bg-orange" onclick="calculateResult()">=</div>
+        </div>
+    </div>
+
+    <script>
+        let currentInput = "0";
+
+        function updateDisplay() {
+            document.getElementById("result").textContent = currentInput;
+        }
+
+        function clearDisplay() {
+            currentInput = "0";
+            updateDisplay();
+        }
+
+        function appendDigit(digit) {
+            if (currentInput === "0") {
+                currentInput = digit;
+            } else {
+                currentInput += digit;
+            }
+            updateDisplay();
+        }
+
+        function appendDecimal(decimal) {
+            if (!currentInput.includes(decimal)) {
+                currentInput += decimal;
+            }
+            updateDisplay();
+        }
+
+        function toggleSign() {
+            currentInput = (parseFloat(currentInput) * -1).toString();
+            updateDisplay();
+        }
+
+        function applyPercent() {
+            currentInput = (parseFloat(currentInput) / 100).toString();
+            updateDisplay();
+        }
+
+        function appendOperator(operator) {
+            currentInput += ` ${operator} `;
+            updateDisplay();
+        }
+
+        function calculateResult() {
+            try {
+                currentInput = eval(currentInput).toString();
+                updateDisplay();
+            } catch (error) {
+                currentInput = "Error";
+                updateDisplay();
+            }
+        }
+    </script>
+</body>
+</html>
+
