@@ -2,37 +2,38 @@ let a = '';
 let b = '';
 let sign = '';
 let finish = false;
+let conBuffer = '';
 
 const digit = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
-const action = ['-', '+', '×', '÷', '%', '+/-'];
+const action = ['-', '+', '×', '÷', '%', '+/-', 'CON'];
 
 const out = document.querySelector('.calc-screen p');
 
-
-//Clear all 
+// Clear all
 function clearAll() {
     a = '';
     b = '';
     sign = '';
     finish = false;
+    conBuffer = '';
     out.textContent = 0;
 }
 
-//Add Clear all 
+// Add Clear all
 document.querySelector('.ac').onclick = clearAll;
 
-//Use button
+// Use button
 document.querySelector('.buttons').onclick = (event) => {
-    //Click a not button
+    // Click a not button
     if (!event.target.classList.contains('btn')) return;
-    //Click a button clearAll
+    // Click a button clearAll
     if (event.target.classList.contains('ac')) return;
 
     out.textContent = '';
     //Get clicked button
     const key = event.target.textContent;
 
-    //If clicked 0-9 or .
+    // If clicked 0-9 or .
     if (digit.includes(key)) {
         if (b === '' && sign === '') {
             a += key;
@@ -49,6 +50,7 @@ document.querySelector('.buttons').onclick = (event) => {
             out.textContent = b;
             return
         }
+        out.textContent = a + sign + b;
     }
 
     //If clicked + - * / or % or +/-
@@ -63,6 +65,7 @@ document.querySelector('.buttons').onclick = (event) => {
             out.textContent = a;
             return;
         }
+        
         else {
             sign = key;
             out.textContent = sign;
@@ -90,10 +93,15 @@ document.querySelector('.buttons').onclick = (event) => {
                     a = '';
                     b = '';
                     sign = '';
+
                     return
                 }
                 a = a / b;
                 break;
+            case 'CON':
+                a = a + b;
+                break;
+            
         }
 
         finish = true
