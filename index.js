@@ -23,7 +23,7 @@ actionsBtn.forEach(btn => {
 
 function calculateFactorial(n) {
   if (n < 0) {
-    return "NaN"; // Factorial is undefined for negative numbers
+    return "NaN";
   }
 
   const result = [1];
