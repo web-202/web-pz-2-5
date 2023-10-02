@@ -115,6 +115,16 @@ function executeStatement() {
   resultInputEl.value = result
 }
 
+function calcFibonacci() {
+  let num = parseInt(resultInputEl.value)
+  let memo = [0, 1]
+  for (let i = 1; i < num; i++) {
+    memo.push(memo[i - 1] + memo[i])
+  }
+
+  resultInputEl.value = memo[num]
+}
+
 function copy() {
   navigator.clipboard.writeText(resultInputEl.value)
     .then(() => {
