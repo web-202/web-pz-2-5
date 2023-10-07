@@ -1,0 +1,118 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: white;
+}
+
+.calculator {
+    background-color: black;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.display {
+    font-size: 48px;
+    color: #333;
+    text-align: right;
+    padding: 20px;
+    border-bottom: 1px solid black;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4,100px);
+}
+
+.btn{
+    background-color: rgba(54, 48, 48, 0.822);
+    color: white;
+    font-size: 36px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 20px;
+    transition: background-color 0.2s;
+    border-radius: 50%;
+    margin: 5px;
+    width: 90px;
+}
+
+.operator{
+    background-color: #ff9500;
+    color: white;
+    display: grid;
+    grid-column: 4;
+    text-align: center;
+    line-height: 45px;
+}
+.operator.plus{
+    line-height: 52px;
+}
+.operator.dev{
+    line-height: 52px;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+.zero{
+    grid-row: 5;
+    width: 180px;
+    border-radius: 40px;
+    text-align: start;
+}
+.point{
+    grid-column: 3;
+    grid-row: 5;
+}
+.pocent{
+    grid-row: 1;
+    grid-column: 3;
+}
+.increase{
+    grid-row: 1;
+    grid-column: 2;
+}
+.seven{
+    grid-row: 2;
+    grid-column: 1;
+}
+.eight{
+    grid-row: 2;
+    grid-column: 2;
+}
+.nine{
+    grid-row: 2;
+    grid-column: 3;
+}
+.four{
+    grid-row: 3;
+    grid-column: 1;
+}
+.five{
+    grid-row: 3;
+    grid-column: 2;
+}
+.six{
+    grid-row: 3;
+    grid-column: 3;
+}
+.one{
+    grid-row: 4;
+    grid-column: 1;
+}
+.two{
+    grid-row: 4;
+    grid-column: 2;
+}
+.three{
+    grid-row: 4;
+    grid-column: 3;
+}
+
+
