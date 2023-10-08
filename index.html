@@ -1,38 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Калькулятор</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
+
 <body>
-    <div class="calculator">
-        <div class="display">
-            <input type="text" id="result" value="0" disabled>
+    <div class="display1">
+        <div class="result">
+            <ol id="result-data">
+                <!-- <li>First item</li>
+                <li>Second item</li>
+                <li>Third item</li> -->
+            </ol>
+
         </div>
-        <div class="buttons">
-            <button onclick="clearDisplay()" class="appButton">AC</button>
-            <button onclick="toggleSign()" class="appButton">+/-</button>
-            <button onclick="calculatePercentage()" class="appButton">%</button>
-            <button onclick="appendToDisplay('/')" class="operation">/</button>
-            <button onclick="appendToDisplay('7')" class="sizeButton">7</button>
-            <button onclick="appendToDisplay('8')" class="sizeButton">8</button>
-            <button onclick="appendToDisplay('9')" class="sizeButton">9</button>
-            <button onclick="appendToDisplay('*')" class="operation">*</button>
-            <button onclick="appendToDisplay('4')" class="sizeButton">4</button>
-            <button onclick="appendToDisplay('5')" class="sizeButton">5</button>
-            <button onclick="appendToDisplay('6')" class="sizeButton">6</button>
-            <button onclick="appendToDisplay('-')" class="operation">-</button>
-            <button onclick="appendToDisplay('1')" class="sizeButton">1</button>
-            <button onclick="appendToDisplay('2')" class="sizeButton">2</button>
-            <button onclick="appendToDisplay('3')" class="sizeButton">3</button>
-            <button onclick="appendToDisplay('+')" class="operation">+</button>
-            <button onclick="appendToDisplay('0')" class="button0">0</button>
-            <button onclick="appendToDisplay('.')" class="sizeButton">.</button>
-            <button onclick="calculate()" class="sizeButton">=</button>
+
+        <div class="dis-calculator">
+            <div class="calculator">
+                <div class="display">
+                    <input type="text" id="result" value="0" disabled>
+                </div>
+                <div class="buttons">
+                    <button onclick="clearDisplay()" class="appButton" id="AC">AC</button>
+                    <button onclick="toggleSign()" class="appButton" id="negativeAndPositive">+/-</button>
+                    <button onclick="calculatePercentage()" class="appButton" id="interest">%</button>
+                    <button onclick="appDisplay('/')" class="operation" id="division">/</button>
+                    <button onclick="appDisplay('7')" class="sizeButton" id="7">7</button>
+                    <button onclick="appDisplay('8')" class="sizeButton" id="8">8</button>
+                    <button onclick="appDisplay('9')" class="sizeButton" id="9">9</button>
+                    <button onclick="appDisplay('*')" class="operation" id="multi">*</button>
+                    <button onclick="appDisplay('4')" class="sizeButton" id="4">4</button>
+                    <button onclick="appDisplay('5')" class="sizeButton" id="5">5</button>
+                    <button onclick="appDisplay('6')" class="sizeButton" id="6">6</button>
+                    <button onclick="appDisplay('-')" class="operation" id="sub">-</button>
+                    <button onclick="appDisplay('1')" class="sizeButton" id="1">1</button>
+                    <button onclick="appDisplay('2')" class="sizeButton" id="2">2</button>
+                    <button onclick="appDisplay('3')" class="sizeButton" id="3">3</button>
+                    <button onclick="appDisplay('+')" class="operation" id="add">+</button>
+                    <button onclick="appDisplay('0')" class="button0" id="0">0</button>
+                    <button onclick="appDisplay('.')" class="sizeButton" id="frag">.</button>
+                    <button onclick="calculate()" class="operation" id="exa">=</button>
+                </div>
+            </div>
+            <div class="buttonscod">
+                <div>
+                    <button id="colorMode" class="colorMode">Змінити колір кнопок</button>
+                </div>
+                <div>
+                    <button id="btnSaved">Зберегти</button>
+                </div>
+                <div>
+                    <button id="btnPaste">Вставити</button>
+                </div>
+            </div>
         </div>
+
     </div>
     <script src="./script.js"></script>
 </body>
+
 </html>

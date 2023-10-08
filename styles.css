@@ -3,6 +3,20 @@ body {
     text-align: center;
 }
 
+.display1{
+    display: flex;
+}
+
+.dis-calculator{
+    margin-left: 100px;
+}
+
+.result{
+    margin-top: 50px;
+}
+.buttonscod{
+    display: flex;
+}
 .calculator {
     width: 260px;
     margin: 50px auto ;
@@ -72,4 +86,37 @@ input[type="text"] {
     height: 50px;
     background-color: rgb(155, 155, 155);
     color: white;
+}
+
+.colorMode{
+    width: 150px;
+    height: 30px;
+}
+
+.colorBtn{
+    width: 50px;
+    height: 50px;
+    color: white;
+    background-color: aqua;
+}
+
+.sizeBtn{
+    width: 50px;
+    height: 50px;
+    background-color: #0800ff;
+    color: white;
+}
+
+.appBtn{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(255, 0, 0);
+    color: white;
+}
+
+.btn0{
+    width: 118px;
+    height: 50px;
+    background-color: #0800ff;
+    color: #fff;
 }
