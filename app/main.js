@@ -75,6 +75,7 @@ document.querySelector('.buttons').onclick = (event) => {
     
     if (key === '=') {
         if (b === '') b = a;
+        debugger
         switch (sign) {
             case '+':
                 a = (+a) + (+b);
@@ -112,5 +113,6 @@ saveButton.addEventListener('click', () => {
 pasteButton.addEventListener('click', () => {
     if (savedResult !== undefined) {
         out.textContent = savedResult;
+        a = savedResult
     }
 });
