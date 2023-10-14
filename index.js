@@ -30,20 +30,13 @@ function makeNegative() {
         screen.textContent = currentInput;
     }
 }
-
-const colorButton = document.getElementById('colorButton');
-
-
-colorButton.addEventListener('click', changeInterfaceColor);
-
-
 function changeInterfaceColor() {
-
-    const calculator = document.querySelector('.calculator');
-    calculator.style.backgroundColor = getRandomColor(); 
-
-    const screen = document.getElementById('screen');
-    screen.style.color = getRandomColor();
+    const randomColor = getRandomColor(); 
+    document.querySelector('.calculator').style.backgroundColor = randomColor; 
+    const buttons = document.querySelectorAll('.button');
+    buttons.forEach(button => {
+        button.style.backgroundColor = getRandomColor(); 
+    });
 }
 
 function getRandomColor() {
