@@ -113,6 +113,12 @@ saveButton.addEventListener('click', () => {
 pasteButton.addEventListener('click', () => {
     if (savedResult !== undefined) {
         out.textContent = savedResult;
-        a = savedResult
+        debugger
+        if(!a) {
+            a = savedResult
+        } else {
+            b = savedResult
+        }
+        
     }
 });
