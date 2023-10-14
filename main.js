@@ -1,95 +1,97 @@
-let a = '';
-let b = '';
-let sign = '';
-let finish = false;
-
-const digit = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
-const action = ['-', '+', '×', '÷', '%', '+/-'];
-
-const out = document.querySelector('.calculator-display p');
-
-function clearAll() {
-    a = '';
-    b = '';
-    sign = '';
-    finish = false;
-    out.textContent = 0;
-}
-
-document.querySelector('.AC').onclick = clearAll;
-
-
-document.querySelector('.buttons').onclick = (event) => {
-    if (!event.target.classList.contains('btn')) return;
-    if (event.target.classList.contains('AC')) return;
-
-    out.textContent = '';
-    const key = event.target.textContent;
-
-    if (digit.includes(key)) {
-        if (b === '' && sign === '') {
-            a += key;
-            out.textContent = a;
-        }
-        else if (a !== '' && b !== '' && finish) {
-            b = key;
-            finish = false;
-            out.textContent = b;
-        }
-
-        else {
-            b += key;
-            out.textContent = b;
-            return
-        }
+class Calculator {
+    constructor() {
+      this.a = '';
+      this.b = '';
+      this.sign = '';
+      this.finish = false;
+  
+      this.digit = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
+      this.action = ['-', '+', '×', '÷', '%', '+/-'];
+  
+      this.out = document.querySelector('.calculator-display p');
+      this.clearButton = document.querySelector('.AC');
+      this.buttonsContainer = document.querySelector('.buttons');
+  
+      this.clearAll = this.clearAll.bind(this);
+      this.handleButtonClick = this.handleButtonClick.bind(this);
+  
+      this.clearButton.onclick = this.clearAll;
+      this.buttonsContainer.onclick = this.handleButtonClick;
     }
-
-    if (action.includes(key)) {
+  
+    clearAll() {
+      this.a = '';
+      this.b = '';
+      this.sign = '';
+      this.finish = false;
+      this.out.textContent = 0;
+    }
+  
+    handleButtonClick(event) {
+      if (!event.target.classList.contains('btn')) return;
+      if (event.target.classList.contains('AC')) return;
+  
+      this.out.textContent = '';
+      const key = event.target.textContent;
+  
+      if (this.digit.includes(key)) {
+        if (this.b === '' && this.sign === '') {
+          this.a += key;
+          this.out.textContent = this.a;
+        } else if (this.a !== '' && this.b !== '' && this.finish) {
+          this.b = key;
+          this.finish = false;
+          this.out.textContent = this.b;
+        } else {
+          this.b += key;
+          this.out.textContent = this.b;
+          return;
+        }
+      }
+  
+      if (this.action.includes(key)) {
         if (key === '%') {
-            a = a / 100;
-            out.textContent = a;
-            return;
+          this.a = this.a / 100;
+          this.out.textContent = this.a;
+          return;
+        } else if (key === '+/-') {
+          this.a = -this.a;
+          this.out.textContent = this.a;
+          return;
+        } else {
+          this.sign = key;
+          this.out.textContent = this.sign;
+          return;
         }
-        else if (key === '+/-') {
-            a = -a;
-            out.textContent = a;
-            return;
+      }
+  
+      if (key === '=') {
+        if (this.b === '') this.b = this.a;
+        switch (this.sign) {
+          case '+':
+            this.a = parseFloat(this.a) + parseFloat(this.b);
+            break;
+          case '-':
+            this.a = parseFloat(this.a) - parseFloat(this.b);
+            break;
+          case '×':
+            this.a = parseFloat(this.a) * parseFloat(this.b);
+            break;
+          case '÷':
+            if (parseFloat(this.b) === 0) {
+              this.out.textContent = 'Error';
+              this.clearAll();
+              return;
+            }
+            this.a = parseFloat(this.a) / parseFloat(this.b);
+            break;
         }
-        else {
-            sign = key;
-            out.textContent = sign;
-            return;
-        }
+  
+        this.finish = true;
+        this.out.textContent = this.a;
+      }
     }
-
-    if (key === '=') {
-        if (b === '') b = a;
-        switch (sign) {
-            case '+':
-                a = (+a) + (+b);
-                break;
-            case '-':
-                a = a - b;
-                break;
-            case '×':
-                a = a * b;
-                break;
-            case '÷':
-                if (b === '0') {
-                    out.textContent = 'Error'
-                    a = '';
-                    b = '';
-                    sign = '';
-                    return
-                }
-                a = a / b;
-                break;
-        }
-
-        finish = true
-        out.textContent = a;
-        console.log(a + '' + sign + '' + b);
-    }
-    
-}
-
+  }
+  
+  const calculator = new Calculator();
+  
