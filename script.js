@@ -1,6 +1,5 @@
 let resultArray = []
-let arrayStorage = JSON.parse(localStorage.getItem("result-data"));
-let resultStorage =[]
+let resultStorage = []
 
 function clearDisplay() {
     document.getElementById('result').value = '0';
@@ -29,42 +28,72 @@ function calculate() {
     const display = document.getElementById('result');
     try {
         display.value = eval(display.value);
-        
+
     } catch (error) {
         display.value = 'Error';
     }
 }
 
 const savedData = JSON.parse(localStorage.getItem("result-data"));
-
 const list = document.getElementById("result-data");
-
+console.log(savedData);
 if (savedData) {
-  savedData.forEach(function(item) {
-    const listItem = document.createElement("li");
-    listItem.textContent = item;
-    list.appendChild(listItem)  ;
-  });
+    list.innerHTML = ''
+    savedData.forEach(function (item) {
+        const listItem = document.createElement("li");
+        listItem.textContent = item;
+        list.appendChild(listItem);
+    });
 }
 
 $('#btnSaved').click(function () {
+
     const display = document.getElementById('result');
     try {
-        display.value = eval(display.value);
-        resultArray.push(display.value);
-        arrayStorage.push(...resultArray)
-        if(resultArray){
-            localStorage.setItem('result-data', JSON.stringify(arrayStorage) )
+        if (localStorage.getItem("result-data") !== null) {
+            let arrayStorage = JSON.parse(localStorage.getItem("result-data"));
+            display.value = eval(display.value);
+            resultArray.push(display.value);
+            arrayStorage.push(...resultArray);
+            console.log(resultArray);
+            console.log(arrayStorage);
+            localStorage.setItem('result-data', JSON.stringify(arrayStorage))
+            resultArray = []
+        } else if (localStorage.getItem("result-data") === null) {
+            display.value = eval(display.value);
+            resultArray.push(display.value);
+            console.log(resultArray);
+            localStorage.setItem('result-data', JSON.stringify(resultArray))
+            resultArray = []
+        }
+
+        const savedData = JSON.parse(localStorage.getItem("result-data"));
+        const list = document.getElementById("result-data");
+        console.log(savedData);
+        if (savedData) {
+            list.innerHTML = ''
+            savedData.forEach(function (item) {
+                const listItem = document.createElement("li");
+                listItem.textContent = item;
+                list.appendChild(listItem);
+            });
         }
     } catch (error) {
         display.value = 'Error';
     }
 })
 
-$('#btnPaste').click(function (){
+$('#data-result-saved-clear').click(function () {
+    localStorage.removeItem('result-data')
+    const list = document.getElementById("result-data");
+    list.innerHTML = ''
+})
+
+$('#btnPaste').click(function () {
+    let arrayStorage = JSON.parse(localStorage.getItem("result-data"));
     const display = document.getElementById('result');
     display.value = arrayStorage[arrayStorage.length - 1];
-    
+
 })
 
 
