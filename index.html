@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Калькулятор</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="screen" id="screen">0</div>
+        <table>
+            <tr>
+                <td onclick="clearScreen()">C</td>
+                <td onclick="appendToScreen('7')">7</td>
+                <td onclick="appendToScreen('8')">8</td>
+                <td onclick="appendToScreen('9')">9</td>
+            </tr>
+            <tr>
+                <td onclick="appendToScreen('4')">4</td>
+                <td onclick="appendToScreen('5')">5</td>
+                <td onclick="appendToScreen('6')">6</td>
+                <td onclick="appendToScreen('*')">*</td>
+            </tr>
+            <tr>
+                <td onclick="appendToScreen('1')">1</td>
+                <td onclick="appendToScreen('2')">2</td>
+                <td onclick="appendToScreen('3')">3</td>
+                <td onclick="appendToScreen('-')">-</td>
+            </tr>
+            <tr>
+                <td onclick="appendToScreen('0')">0</td>
+                <td onclick="calculate()">=</td>
+                <td onclick="appendToScreen('.')">.</td>
+                <td onclick="appendToScreen('+')">+</td>
+            </tr>
+            <tr>
+                <td  onclick="calculatePercentage()">%</td>
+                <td  onclick="makeNegative()">+/-</td>
+								<td  id="changeColor">Style</td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
