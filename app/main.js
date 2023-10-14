@@ -35,6 +35,7 @@ document.querySelector('.buttons').onclick = (event) => {
 
     
     if (digit.includes(key)) {
+        debugger
         if (b === '' && sign === '') {
             a += key;
             out.textContent = a;
@@ -48,6 +49,7 @@ document.querySelector('.buttons').onclick = (event) => {
         else {
             b += key;
             out.textContent = b;
+            finish = false
             return
         }
     }
@@ -74,7 +76,11 @@ document.querySelector('.buttons').onclick = (event) => {
 
     
     if (key === '=') {
-        if (b === '') b = a;
+        debugger
+        if (!a || !b) {
+            out.textContent = a ? a : 0
+            return;
+        } 
         debugger
         switch (sign) {
             case '+':
@@ -100,6 +106,7 @@ document.querySelector('.buttons').onclick = (event) => {
 
         finish = true
         out.textContent = a;
+        b=''
         console.log(a + '' + sign + '' + b);
     }
 }
