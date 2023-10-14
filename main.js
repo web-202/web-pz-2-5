@@ -91,7 +91,7 @@ class Calculator {
         this.out.textContent = this.a;
       }
     }
-  }
+}
   
   const calculator = new Calculator();
   
