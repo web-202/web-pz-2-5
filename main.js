@@ -17,6 +17,9 @@ class Calculator {
   
       this.clearButton.onclick = this.clearAll;
       this.buttonsContainer.onclick = this.handleButtonClick;
+
+      this.btnChangeColor = document.querySelector('.change-color');
+      this.btnChangeColor.onclick = () => this.changeCalculatorColor();
     }
   
     clearAll() {
@@ -25,6 +28,7 @@ class Calculator {
       this.sign = '';
       this.finish = false;
       this.out.textContent = 0;
+      this.resultDisplayed = false;
     }
   
     handleButtonClick(event) {
@@ -91,7 +95,38 @@ class Calculator {
         this.out.textContent = this.a;
       }
     }
+
+    saveResult() {
+        this.savedResult = this.a;
+    }
+
+    pasteResult() {
+        if (this.savedResult !== undefined) {
+            if (this.b === '' && this.sign === '') {
+                this.a += this.savedResult;
+                this.out.textContent = this.a;
+            } else if (this.a !== '' && this.b !== '' && this.finish) {
+                this.b = this.savedResult;
+                this.finish = false;
+                this.out.textContent = this.b;
+            } else {
+                this.b += this.savedResult;
+                this.out.textContent = this.b;
+            }
+        }
+    }
+
+    changeCalculatorColor() {
+        const calculator = document.querySelector('.calculator');
+        calculator.classList.toggle('alternative-color-scheme');
+        console.log('Color changed');
+    }
+     
 }
   
   const calculator = new Calculator();
+  const btnSave = document.querySelector('.save');
+  const btnPaste = document.querySelector('.paste');
   
+  btnSave.onclick = () => calculator.saveResult();
+  btnPaste.onclick = () => calculator.pasteResult();
