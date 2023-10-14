@@ -13,7 +13,6 @@
 
 .calc-screen {
     display: grid;
-    justify-items: end;
     align-items: end;
     height: 125px;
     padding: 10px;
@@ -74,3 +73,4 @@
 .btn.bg-orange {
     background: #ff9501;
 }
+
