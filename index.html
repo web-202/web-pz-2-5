@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Каклюкатор</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="screen" id="screen">0</div>
+        <div class="button-container">
+            <div class="button-row">
+                <div class="button custom" onclick="clearScreen()">C</div>
+                <div class="button custom" onclick="makeNegative()">+/-</div>
+                <div class="button custom" onclick="calculatePercentage()">%</div>
+                <div class="button but" onclick="appendToScreen('/')">/</div>
+            </div>
+            <div class="button-row">
+                <div class="button" onclick="appendToScreen('7')">7</div>
+                <div class="button" onclick="appendToScreen('8')">8</div>
+                <div class="button" onclick="appendToScreen('9')">9</div>
+                <div class="button but" onclick="appendToScreen('*')">*</div>
+            </div>
+            <div class="button-row">
+                <div class="button" onclick="appendToScreen('4')">4</div>
+                <div class="button" onclick="appendToScreen('5')">5</div>
+                <div class="button" onclick="appendToScreen('6')">6</div>
+                <div class="button but" onclick="appendToScreen('-')">-</div>
+            </div>
+            <div class="button-row">
+                <div class="button" onclick="appendToScreen('1')">1</div>
+                <div class="button" onclick="appendToScreen('2')">2</div>
+                <div class="button" onclick="appendToScreen('3')">3</div>
+                <div class="button but" onclick="appendToScreen('+')">+</div>
+            </div>
+            <div class="button-row">
+                <div class="button" onclick="appendToScreen('0')">0</div>
+                <div class="button" onclick="appendToScreen('.')">.</div>
+                <div class="button custom-button" onclick="clearHistory()">Н</div>
+                <div class="button but" onclick="calculate()">=</div>
+                </div>
+            </div>
+            </div>
+            <div class="calculator">
+                <div class="previous-result" id="previous-result"></div>
+                <div class="button-container">
+                </div>
+        </div>
+    </div>
+    </div>
+    <script src="index.js">
+    </script>
+</body>
+</html>
