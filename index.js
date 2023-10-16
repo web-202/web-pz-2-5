@@ -93,3 +93,22 @@ document.querySelector('.buttons').onclick = (event) => {
     }
     
 }
+document.querySelector('.change-theme').onclick = () => {
+    const buttons = document.querySelectorAll('.btn');
+    const calculate = document.querySelector('.calculate');
+    if (calculate.style.background === 'rgb(0, 0, 0)') {
+        calculate.style.background = '#00ff00';
+        calculate.style.color = '#000';
+        buttons.forEach(button => {
+            button.style.background = '#00ff00';
+            button.style.color = '#000';
+        });
+    } else {
+        calculate.style.background = '#000';
+        calculate.style.color = '#fff';
+        buttons.forEach(button => {
+            button.style.background = '#333';
+            button.style.color = '#fff';
+        });
+    }
+};
