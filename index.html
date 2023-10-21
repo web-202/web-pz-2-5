@@ -21,7 +21,7 @@
 
 <div class="rows">
     <button id="7" class="button button_numb">7</button>
-    <button id="8/-" class="button button_numb">8</button>
+    <button id="8" class="button button_numb">8</button>
     <button id="9" class="button button_numb">9</button>
     <button id="*" class="button button_act">x</button>
 </div>
@@ -46,14 +46,24 @@
     <button id="=" class="button button_calc">=</button>
 </div>
 
-<div style="display:flex;justify-content: end; margin-right: 5px" class="rows">
-    <button id="!" class="button button_act">s</button>
+
+  <div class="theme-switcher">
+
+    <input type="radio" name="theme" id="dark-mode" >
+    <label for="dark-mode">Dark</label>
+
+
+    <input type="radio" name="theme" id="light-mode" checked>
+    <label for="light-mode">Light</label>
+    
   </div>
+  
+
 
 
 </div>
 
-<script src ="calcutator.js"></script>
+<script src ="calculator.js"></script>
 
 </body>
 </html>

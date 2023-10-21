@@ -3,6 +3,7 @@ body {
     justify-content: left;
     align-items:first baseline;
     height: 110vh;
+    
 }
 
 .result{
@@ -78,3 +79,30 @@ body {
     justify-content:left;
    
 }
+
+.light-mode {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    
+  }
+  
+  .dark-mode {
+    --bg-color: #222; 
+    --text-color: #ffffff;
+    
+  }
+
+  
+  .mycalculator{
+    
+    background-color: var(--bg-color);
+  }
+ 
+  
+  .button {
+    color: var(--text-color);
+  }
+
+  .result{
+    color: var(--text-color);
+  }
