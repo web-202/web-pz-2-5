@@ -74,7 +74,7 @@
     background: #ff9501;
 }
 .additional-buttons {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 7px;
     margin-top: 15px;
@@ -90,6 +90,18 @@
     font-size: 1rem;
     cursor: pointer;
     user-select: none;
+}
+.btn.to-binary{
+    width: 100%;
+    height: 60px;
+    background: #a6a6a6;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 60px;
+    font-size: 1rem;
+    cursor: pointer;
+    user-select: none;
+    align-items: center;
 }
 
 .btn.save:hover, .btn.paste:hover {

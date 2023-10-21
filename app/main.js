@@ -88,7 +88,7 @@ document.querySelector(".buttons").onclick = (event) => {
 
   //Clicked =
   if (key === '=') {
-    if (b === '') b = a;
+   
     switch (sign) {
         case '+':
             a = +a + +b;
@@ -116,4 +116,14 @@ document.querySelector(".buttons").onclick = (event) => {
     out.textContent = a;
     console.log(a + "" + sign + "" + b);
   }
+
+  function toBinary() {
+    if (a !== "") {
+        const binaryValue = (+a).toString(2);
+        out.textContent = binaryValue;
+        
+    }
+}
+
+document.querySelector('.to-binary').onclick = toBinary;
 };
