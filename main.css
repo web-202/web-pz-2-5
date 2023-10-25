@@ -8,29 +8,29 @@ body {
     background-color: #f0f0f0;
 }
 
-.калькулятор {
-    background-color: #5de166;
+.calculator{
+    background-color: #1c2ae9;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 400px;
     text-align: center;
 }
 
-.екран-калькулятора {
+.screen {
     background-color: #f0f0f0;
     border-radius: 10px 10px 0 0;
     padding: 20px;
     font-size: 2rem;
 }
 
-.buttons, .додаткові-кнопки {
+.buttons, .add-buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     padding: 20px;
 }
 
-.кнопка {
+.button {
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -40,20 +40,20 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.кнопка:hover {
-    background-color: #e0e0e0;
+.button:hover {
+    background-color: #eedbdb;
 }
 
-.кнопка.ac, .кнопка.рівно {
-    background-color: #214d1d;
+.button.ac, .button.medium {
+    background-color: #413cd4;
     color: #fff;
 }
 
-.кнопка.фон-сірий {
+.button.background-gray {
     background-color: #ccc;
 }
 
-.кнопка.фон-помаранчевий {
-    background-color: #285d29;
+.button.button.background-blue {
+    background-color: #1921c7;
     color: #fff;
 }

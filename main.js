@@ -6,7 +6,7 @@ let finish = false;
 const digit = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
 const action = ["-", "+", "×", "÷", "%", "+/-"];
 
-const out = document.querySelector(".екран-калькулятора p");
+const out = document.querySelector(".screen p");
 
 function saveResult() {
     if (a !== "") {
@@ -22,8 +22,8 @@ function pasteResult() {
     }
 }
 
-document.querySelector(".зберегти").onclick = saveResult;
-document.querySelector(".вставити").onclick = pasteResult;
+document.querySelector(".save").onclick = saveResult;
+document.querySelector(".insert").onclick = pasteResult;
 
 function clearAll() {
     a = "";
@@ -36,7 +36,7 @@ function clearAll() {
 document.querySelector(".ac").onclick = clearAll;
 
 document.querySelector(".buttons").onclick = (event) => {
-    if (!event.target.classList.contains("кнопка")) return;
+    if (!event.target.classList.contains("button")) return;
     if (event.target.classList.contains("ac")) return;
     if (finish) return;
     out.textContent = "";
