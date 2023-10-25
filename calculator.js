@@ -5,8 +5,8 @@ const resultView = document.getElementById("result")
 const calculateBtn = document.getElementById("=")
 const clearBtn = document.getElementById("AC")
 let savedValue = '';
-const saveBtn = document.getElementById(savedValue);
-const pasteBtn = document.getElementById(savedValue);
+const saveBtn = document.getElementById("save");
+const pasteBtn = document.getElementById("paste");
 saveBtn.addEventListener("click", () => {
   savedValue = resultView.textContent;
 })
