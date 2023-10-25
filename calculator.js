@@ -4,7 +4,15 @@ const percentsBtn = document.querySelectorAll(".button_percents")
 const resultView = document.getElementById("result")
 const calculateBtn = document.getElementById("=")
 const clearBtn = document.getElementById("AC")
-
+let savedValue = '';
+const saveBtn = document.getElementById(savedValue);
+const pasteBtn = document.getElementById(savedValue);
+saveBtn.addEventListener("click", () => {
+  savedValue = resultView.textContent;
+})
+pasteBtn.addEventListener("click", () => {
+  resultView.textContent += savedValue;
+})
 const themeSwitcher = document.querySelector('.theme-switcher');
 
 numbersBtn.forEach(btn => {
