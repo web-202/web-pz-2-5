@@ -1,0 +1,80 @@
+*{
+    font-family: 'SF Pro Display', sans-serif;
+}
+body{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.calculator{
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    width: 454px;
+    height: 920px;
+    background: url('../img/Blue.png');
+}
+.time{
+    margin-left: 35px;
+}
+.display__elements{
+    margin-right: 10px;
+}
+.display__elements > img{
+    margin-right: 5px;
+}
+.calculator__content{
+    color: #ffff;
+    padding: 65px 20px;
+    width: 404px;
+    height: 875px;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.output{
+    margin-top: 150px;
+    text-align: end;
+    font-size: 80px;
+    padding-right: 20px;
+    overflow: hidden;
+    
+}
+.calculate__row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 17px;
+}
+.calculate__content{
+    margin-top: 30px;
+    padding: 0 10px;
+}
+.item_calculate{
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+    background: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    cursor: pointer;
+}
+.zero{
+    width: 155px;
+    border-radius: 62px;
+    justify-content: start;
+    padding-left: 35px;
+}
+.function{
+    background: #C4C4C4;
+    color: #333333;
+}
+.math_function{
+    background: #FF9500;
+}
