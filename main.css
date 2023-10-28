@@ -61,7 +61,7 @@ body {
     color: #fff;
 }
 .color-change-button.clicked {
-    background-color: blue;
+    background-color: rgb(116, 12, 180);
 }
 
 .button.background-gray {

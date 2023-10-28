@@ -10,7 +10,7 @@ const allButtons = document.querySelectorAll('.button');
 
 colorChangeButton.addEventListener('click', function() {
     allButtons.forEach(button => {
-        button.style.backgroundColor = 'blue'; // або будь-який інший колір, який ви хочете встановити
+        button.style.backgroundColor = 'violet'; 
     });
 });
 
