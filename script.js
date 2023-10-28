@@ -47,3 +47,35 @@ function pasteFromClipboard() {
         screen.textContent = currentInput.join('');
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    const elements = document.querySelectorAll('.btn');
+    const changeButton = document.getElementById('changeButton');
+
+    changeButton.addEventListener('click', function () {
+        elements.forEach(function (element) {
+            const randomColor = getRandomColor();
+            element.style.backgroundColor = randomColor;
+        });
+    });
+
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+});
+document.addEventListener('DOMContentLoaded', function () {
+    const elements = document.querySelectorAll('.btn');
+    const changeButton = document.getElementById('changeButton-2');
+
+    changeButton.addEventListener('click', function () {
+        elements.forEach(function (element) {
+
+            element.style.backgroundColor = '';
+        });
+    });
+});
