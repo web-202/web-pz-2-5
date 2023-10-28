@@ -43,3 +43,14 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
+
+function saveResult() {
+  savedResult = currentInput;
+}
+
+function pasteResult() {
+    if (savedResult !== null) {
+      currentInput += savedResult;
+      screen.textContent = currentInput;
+    }
+  }

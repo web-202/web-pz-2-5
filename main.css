@@ -29,3 +29,8 @@ table td {
     text-align: center;
     cursor: pointer;
 }
+.row {
+	display: flex;
+	justify-content: center; 
+	align-items: center
+}
