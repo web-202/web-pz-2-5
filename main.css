@@ -8,7 +8,7 @@
     background-color: black;
     border-radius: 10px;
     width: 30%;
-    height: 545px;
+    height: 630px;
     margin: 100px 500px;
 }
 .calculateResult{
@@ -83,4 +83,17 @@
     margin: 0px 22px;
     font-size: 34px;
     left: 50px;
+    
+}
+.color-change{
+    color: aliceblue;
+    background-color: rgb(57, 56, 56);
+    border-radius: 44px;
+    border: none;
+    width: 38%;
+    height: 72px;
+
+}
+.calculatePaste{
+    width: 20%;
 }
