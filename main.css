@@ -8,12 +8,17 @@ body {
     background-color: #f0f0f0;
 }
 
-.calculator{
+.calculator {
     background-color: #1c2ae9;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 400px;
     text-align: center;
+    transition: background-color 0.3s ease; 
+    }
+
+.calculator.color-change {
+    background-color: #1c2ae9; 
 }
 
 .screen {
@@ -28,6 +33,13 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     padding: 20px;
+}
+.button.color {
+    background-color: #ffcc00;
+    color: #fff; 
+}
+.button.color:hover {
+    background-color: #e6b800; 
 }
 
 .button {
@@ -45,8 +57,11 @@ body {
 }
 
 .button.ac, .button.medium {
-    background-color: #413cd4;
+    background-color: #e40d0d;
     color: #fff;
+}
+.color-change-button.clicked {
+    background-color: blue;
 }
 
 .button.background-gray {
@@ -54,6 +69,6 @@ body {
 }
 
 .button.button.background-blue {
-    background-color: #1921c7;
+    background-color: #e12006;
     color: #fff;
 }

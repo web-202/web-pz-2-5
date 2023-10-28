@@ -5,6 +5,14 @@ let finish = false;
 
 const digit = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."];
 const action = ["-", "+", "×", "÷", "%", "+/-"];
+const colorChangeButton = document.getElementById('color-change-button');
+const allButtons = document.querySelectorAll('.button');
+
+colorChangeButton.addEventListener('click', function() {
+    allButtons.forEach(button => {
+        button.style.backgroundColor = 'blue'; // або будь-який інший колір, який ви хочете встановити
+    });
+});
 
 const out = document.querySelector(".screen p");
 
@@ -41,7 +49,8 @@ document.querySelector(".buttons").onclick = (event) => {
     if (finish) return;
     out.textContent = "";
     const key = event.target.textContent;
-
+    const colorButton = document.querySelector(".color");
+    
     if (digit.includes(key)) {
         if (b === "" && sign === "") {
             a += key;
