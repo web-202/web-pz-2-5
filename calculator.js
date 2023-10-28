@@ -5,26 +5,35 @@ const resultView = document.getElementById("result")
 const calculateBtn = document.getElementById("=")
 const clearBtn = document.getElementById("AC")
 let savedValue = '';
+const themeSwitcher = document.querySelector('.theme-switcher');
+
 const saveBtn = document.getElementById("save");
 const pasteBtn = document.getElementById("paste");
+
+
+numbersBtn.forEach(btn => {
+  btn.addEventListener("click", () => {
+    debugger
+    if(btn.id !== "save" && btn.id !== "paste") {
+      resultView.textContent += btn.id;
+    }
+  })
+})
+
 saveBtn.addEventListener("click", () => {
+  alert(resultView.textContent)
   savedValue = resultView.textContent;
 })
 pasteBtn.addEventListener("click", () => {
   resultView.textContent += savedValue;
 })
-const themeSwitcher = document.querySelector('.theme-switcher');
-
-numbersBtn.forEach(btn => {
-  btn.addEventListener("click", () => {
-    resultView.textContent += btn.id;
-  })
-})
 
 actionsBtn.forEach(btn => {
   if (btn.id !== "!") {
     btn.addEventListener("click", () => {
+      if(btn.id !== "save" && btn.id !== "paste") {
       resultView.textContent += btn.id;
+      }
     })
   }
 })
