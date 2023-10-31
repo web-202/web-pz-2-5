@@ -48,3 +48,12 @@ function calc() {
     sign = ''
     firstNumber = 0
 }
+
+async function copyValue() {
+    await navigator.clipboard.writeText(output.innerHTML)
+}
+
+async function pasteValue() {
+    let data = await navigator.clipboard.readText()
+    output.innerHTML = data
+}
