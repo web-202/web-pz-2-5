@@ -57,3 +57,8 @@ async function pasteValue() {
     let data = await navigator.clipboard.readText()
     output.innerHTML = data
 }
+
+function changeClass(input, className) {
+    var r = document.querySelector(':root');
+    r.style.setProperty('--' + className, input.value);
+}

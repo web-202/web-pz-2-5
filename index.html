@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="calculator">
+        <div class="calculator black">
             <p id="output">0</p>
 
             <div class="interface">
@@ -52,6 +52,13 @@
                 <div class="row">
                     <button onclick="copyValue()" class="white double">Copy</button>
                     <button onclick="pasteValue()" class="white double">Paste</button>
+                </div>
+
+                <div class="row">
+                    <input onchange="changeClass(this, 'black')" type="color" value="#000000">
+                    <input onchange="changeClass(this, 'gray')" type="color" value="#808080">
+                    <input onchange="changeClass(this, 'orange')" type="color" value="#af6214">
+                    <input onchange="changeClass(this, 'white')" type="color" value="#c4c0c0">
                 </div>
             </div>
         </div>
