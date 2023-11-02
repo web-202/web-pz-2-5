@@ -1,6 +1,6 @@
 const numbersBtn = document.querySelectorAll(".button_numb")
 const actionsBtn = document.querySelectorAll(".button_act")
-const percentsBtn = document.querySelectorAll(".button_percents")
+
 const resultView = document.getElementById("result")
 const calculateBtn = document.getElementById("=")
 const clearBtn = document.getElementById("AC")
@@ -10,10 +10,38 @@ const themeSwitcher = document.querySelector('.theme-switcher');
 const saveBtn = document.getElementById("save");
 const pasteBtn = document.getElementById("paste");
 
+const negateBtn = document.getElementById("negate");
+const percentBtn = document.getElementById("percent");
+
+negateBtn.addEventListener("click", () => {
+    if (resultView.textContent === "") {
+        return; 
+    }
+
+    
+    if (resultView.textContent.charAt(0) === '-') {
+        resultView.textContent = resultView.textContent.slice(1); 
+    } else {
+        resultView.textContent = '-' + resultView.textContent; 
+    }
+});
+
+percentBtn.addEventListener("click", () => {
+    if (resultView.textContent === "") {
+        return; 
+    }
+
+    const currentValue = parseFloat(resultView.textContent);
+    const percentageValue = currentValue / 100;
+
+    resultView.textContent = percentageValue;
+});
+
+
 
 numbersBtn.forEach(btn => {
   btn.addEventListener("click", () => {
-    debugger
+  
     if(btn.id !== "save" && btn.id !== "paste") {
       resultView.textContent += btn.id;
     }
@@ -21,7 +49,7 @@ numbersBtn.forEach(btn => {
 })
 
 saveBtn.addEventListener("click", () => {
-  alert(resultView.textContent)
+  
   savedValue = resultView.textContent;
 })
 pasteBtn.addEventListener("click", () => {
@@ -39,18 +67,7 @@ actionsBtn.forEach(btn => {
 })
 
 
-function calculateFactorial(n) {
-  if (n < 0) {
-    return "NaN";
-  }
 
-  const result = [1];
-
-  for (let i = 2; i <= n; i++) {
-    multiply(result, i);
-  }
-  return result.join("");
-}
 
 function multiply(arr, multiplier) {
   let carry = 0;
@@ -78,11 +95,6 @@ clearBtn.addEventListener("click", () => {
 })
 
 
-percentsBtn.forEach(btn => {
-  btn.addEventListener("click", () => {
-
-  })
-})
 
 themeSwitcher.addEventListener('change', evt => {
     document.body.className = evt.target.id;

@@ -59,6 +59,14 @@ body {
     background:  rgb(172, 172, 172);
 }
 
+.button_percent{
+    background: orange;
+}
+
+.button_negate{
+    background: orange;
+}
+
 
 
 .button{
