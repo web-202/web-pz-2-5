@@ -9,7 +9,7 @@ const action = ['-', '+', '×', '÷', '%', '+/-'];
 const out = document.querySelector('.calc-screen p');
 
 
-//Clear all 
+
 function clearAll() {
     a = '';
     b = '';
@@ -18,21 +18,21 @@ function clearAll() {
     out.textContent = 0;
 }
 
-//Add Clear all 
+ 
 document.querySelector('.ac').onclick = clearAll;
 
-//Use button
+
 document.querySelector('.buttons').onclick = (event) => {
-    //Click a not button
+    
     if (!event.target.classList.contains('btn')) return;
-    //Click a button clearAll
+    
     if (event.target.classList.contains('ac')) return;
 
     out.textContent = '';
-    //Get clicked button
+    
     const key = event.target.textContent;
 
-    //If clicked 0-9 or .
+    
     if (digit.includes(key)) {
         if (b === '' && sign === '') {
             a += key;
@@ -51,7 +51,7 @@ document.querySelector('.buttons').onclick = (event) => {
         }
     }
 
-    //If clicked + - * / or % or +/-
+    
     if (action.includes(key)) {
         if (key === '%') {
             a = a / 100;
@@ -71,7 +71,7 @@ document.querySelector('.buttons').onclick = (event) => {
     }
 
 
-    //Clicked =
+    
     if (key === '=') {
         if (b === '') b = a;
         switch (sign) {
@@ -102,4 +102,72 @@ document.querySelector('.buttons').onclick = (event) => {
     }
     
 }
+
+const changeColorButton = document.querySelector('.change-color');
+
+const calculatorContainer = document.querySelector('.calc');
+
+changeColorButton.addEventListener('click', function() {
+
+    const randomColor = getRandomColor();
+    calculatorContainer.style.backgroundColor = randomColor;
+});
+
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+const changeButtonColorButton = document.querySelector('.change-button-color');
+
+const calculatorButtons = document.querySelectorAll('.btn');
+
+changeButtonColorButton.addEventListener('click', function() {
+    const randomColor = getRandomColor();
+    
+    calculatorButtons.forEach(function(button) {
+        button.style.backgroundColor = randomColor;
+    });
+});
+
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+
+const toggleButtonShapeButton = document.querySelector('.toggle-button-shape');
+
+
+const buttons = document.querySelectorAll('.btn');
+
+
+let buttonsAreSquare = false;
+
+toggleButtonShapeButton.addEventListener('click', function() {
+    buttonsAreSquare = !buttonsAreSquare;
+    
+    calculatorButtons.forEach(function(button) {
+        if (buttonsAreSquare) {
+            button.classList.add('square-button');
+        } else {
+            button.classList.remove('square-button');
+        }
+    });
+});
+
+
+
+
+
+
+
 
