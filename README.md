@@ -1,4 +1,4 @@
-# Practical lesson pz-2-5 WEB
+gi# Practical lesson pz-2-5 WEB
 > In this lesson students should build a JavaScript calculator
 
 ### Acceptance criteria 
