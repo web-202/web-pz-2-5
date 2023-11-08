@@ -6,11 +6,12 @@ function app(value) {
   screen.textContent = currentValue;
 }
 
-function clear() {
-  console.log('0')
+function clearAC() {
+  console.log('0');
   currentValue = '';
   screen.textContent = '0';
 }
+
 
 function percentage() {
   if (currentValue !== '') {
