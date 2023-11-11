@@ -9,9 +9,6 @@ let colorButton = document.querySelectorAll("button");
 
 
 
-
-
-
 const genNew = document.getElementById("genNew");
 
 const copyButton = document.querySelector('.calculateCopy');
@@ -85,6 +82,10 @@ document.querySelector('.buttons').onclick = (event) => {
         break;
     }
     finish = true;
+
+
+
+    
     currentInput.textContent = a;
   }
 
@@ -101,7 +102,6 @@ document.querySelector('.buttons').onclick = (event) => {
       const calculator = document.querySelector(".calculator"); 
       calculator.style.backgroundColor = "orange";
 
-      
     });
   });
 
