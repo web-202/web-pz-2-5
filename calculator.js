@@ -6,13 +6,17 @@ let clipboard = '';
 
 let colorButtons = document.querySelectorAll(".color-change");
 let colorButton = document.querySelectorAll("button");
+
+
+
 const genNew = document.getElementById("genNew");
 
 const copyButton = document.querySelector('.calculateCopy');
 const pasteButton = document.querySelector('.calculatePaste');
 
+
 const digit = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
-const alt = ['*', '/', '-', '+', '%']; // Додано масив "alt"
+const alt = ['*', '/', '-', '+', '%']; 
 
 let currentInput = document.querySelector('.win');
 
@@ -81,6 +85,8 @@ document.querySelector('.buttons').onclick = (event) => {
     currentInput.textContent = a;
   }
 
+
+
   colorButtons.forEach((button) => {
     button.addEventListener("click", () => {
       colorButton.forEach((button) => {
@@ -88,8 +94,16 @@ document.querySelector('.buttons').onclick = (event) => {
         button.style.backgroundColor = "#" + randomColor;
         button.style.color = "#fff";
       });
+
+      const calculator = document.querySelector(".calculator"); 
+      calculator.style.backgroundColor = "orange";
+
+      
     });
   });
+
+  
+
 }
 
 let result = 0;
