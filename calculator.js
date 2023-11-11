@@ -9,6 +9,9 @@ let colorButton = document.querySelectorAll("button");
 
 
 
+
+
+
 const genNew = document.getElementById("genNew");
 
 const copyButton = document.querySelector('.calculateCopy');
