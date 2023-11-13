@@ -3,12 +3,18 @@ let b = '';
 let sign = '';
 let finish = false;
 
-const digit = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
+const digit = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', '!'];
 const action = ['-', '+', '×', '÷', '%', '+/-'];
 
 const out = document.querySelector('.calculator-screen p');
 
-
+function factorial(num) {
+    if (num === 0 || num === 1) {
+        return 1;
+    } else {
+        return num * factorial(num - 1);
+    }
+}
 function clearAll() {
     a = '';
     b = '';
@@ -26,6 +32,15 @@ document.querySelector('.buttons').onclick = (event) => {
     out.textContent = '';
     const key = event.target.textContent;
 
+    if (digit.includes(key) || key === '!') {
+        if (key === '!') {
+            if (a !== '' && !b) {
+                a = factorial(+a);
+                out.textContent = a;
+                finish = true;
+            }
+            return;
+        }
     if (digit.includes(key)) {
         if (b === '' && sign === '') {
             a += key;
@@ -93,7 +108,7 @@ document.querySelector('.buttons').onclick = (event) => {
     }
     
 }
-
+}
 const changeColorButton = document.querySelector('.change-color');
 
 const calculatorContainer = document.querySelector('.calculator');
@@ -115,26 +130,3 @@ changeButtonColorButton.addEventListener('click', function() {
         button.style.backgroundColor = randomColor;
     });
 });
-
-const calcScreen = document.getElementById('result');
-const saveResultButton = document.querySelector('.save-result');
-
-let savedResult = null;
-
-saveResultButton.addEventListener('click', function() {
-    savedResult = calcScreen.textContent;
-    alert('Result saved: ' + savedResult);
-});
-
-const pasteResultButton = document.querySelector('.paste-result');
-
-pasteResultButton.addEventListener('click', function() {
-    if (savedResult !== null) {
-        calcScreen.textContent = savedResult;
-        alert('Result pasted: ' + savedResult);
-    } else {
-        alert('No saved result.');
-    }
-});
-
-
