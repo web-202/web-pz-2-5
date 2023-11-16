@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Калькулятор</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="data" id="data">0</div>
+        <div class="container">
+            <div class="row">
+                <div class="btn" onclick="clearData()">C</div>
+                <div class="btn" onclick="appToData('7')">7</div>
+                <div class="btn" onclick="appToData('8')">8</div>
+                <div class="btn" onclick="appendTodata('9')">9</div>
+            </div>
+            <div class="row">
+                <div class="btn" onclick="appToData('/')">/</div>
+                <div class="btn" onclick="appToData('4')">4</div>
+                <div class="btn" onclick="appToData('5')">5</div>
+                <div class="btn" onclick="appToData('6')">6</div>
+            </div>
+            <div class="row">
+                <div class="btn" onclick="appToData('*')">*</div>
+                <div class="btn" onclick="appToData('1')">1</div>
+                <div class="btn" onclick="appToData('2')">2</div>
+                <div class="btn" onclick="appToData('3')">3</div>
+            </div>
+            <div class="row">
+                <div class="btn" onclick="appToData('-')">-</div>
+                <div class="btn" onclick="appToData('0')">0</div>
+                <div class="btn" onclick="calculate()">=</div>
+                <div class="btn" onclick="appToData('.')">.</div>
+            </div>
+            <div class="row">
+                <div class="btn" onclick="calculatePercentage()">%</div>
+                <div class="btn" onclick="change()">+/-</div>
+                <div class="btn" onclick="appToData('+')">+</div>
+                <div class="btn"></div>
+            </div>
+            <div class="btn" onclick="changeColor()">Change Color</div>
+            <button id="saveButton">Save</button>
+        </div>
+    </div>
+
+    <script src="index.js">
+    </script>
+</body>
+</html>
