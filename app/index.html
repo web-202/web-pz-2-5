@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pz_2.5</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <div class="calc">
+        <div class="screen" id="screen">0</div>
+            <div calss="buttons">
+                <div class="row">
+                <button class="function_button" onclick="clearScreen()">ac</button>
+                <button class="function_button" onclick="makeNegative()">+/-</button>
+                <button class="function_button" onclick="calculatePercentage()">%</button>
+                <button class="event_button" onclick="appendToScreen('/')">/</button>
+                </div>
+                <div class="row">
+                <button class="standart_button" onclick="appendToScreen('7')">7</button>
+                <button class="standart_button" onclick="appendToScreen('8')">8</button>
+                <button class="standart_button" onclick="appendToScreen('9')">9</button>
+                <button class="event_button" onclick="appendToScreen('*')">*</button>
+                </div>
+                <div class="row">
+                <button class="standart_button" onclick="appendToScreen('4')">4</button>
+                <button class="standart_button" onclick="appendToScreen('5')">5</button>
+                <button class="standart_button" onclick="appendToScreen('6')">6</button>
+                <button class="event_button" onclick="appendToScreen('-')">-</button>
+                </div>
+                <div class="row">
+                <button class="standart_button" onclick="appendToScreen('1')">1</button>
+                <button class="standart_button" onclick="appendToScreen('2')">2</button>
+                <button class="standart_button" onclick="appendToScreen('3')">3</button>
+                <button class="event_button" onclick="appendToScreen('+')">+</button>
+                </div>
+                <div class="row">
+                <button class="button_0" onclick="appendToScreen('0')">0</button>
+                <button class="standart_button" onclick="appendToScreen('.')">.</button>
+                <button class="event_button" onclick="calculate()">=</button>
+                </div>
+                <div class="row">
+                    <button class="standart_button" id="color_change">Color</button>
+                    <button class="standart_button" id="save_button" onclick="saveResult()">Save</button>
+                    <button class="standart_button" id="paste_button" onclick="pasteResult()">Paste</button>
+                </div>
+            </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
