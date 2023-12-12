@@ -71,3 +71,28 @@ function handlePageClose(event) {
 
 // Додаємо обробник події beforeunload до вікна
 window.addEventListener('beforeunload', handlePageClose);
+
+let copyLink
+document.getElementById('copy').addEventListener('click',()=>{
+    copyLink = outputLink.textContent
+})
+document.getElementById('paste').addEventListener('click',()=>{
+
+    outputLink.textContent = copyLink
+})
+
+const randomColor = () =>{
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
+    return 'rgb(' + red + ',' + green + ',' + blue + ')'
+}
+document.getElementById('switch-theme').addEventListener('click',()=>{
+    document.querySelectorAll('.calculate__row>div').forEach(element => {
+        element.style.backgroundColor = randomColor()
+        
+    });
+})
+
+
+
