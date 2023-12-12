@@ -2,9 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>Title</title>
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-$END$
+
+<div class="calc">
+  <p id="result">0</p>
+  <div class="buttons">
+    <div class="btn ac bg-grey" onclick="clearDisplay()">AC</div>
+    <div class="btn plus bg-grey" onclick="appendOperator('+')">+</div>
+    <div class="btn percent bg-grey" onclick="appendOperator('%')">%</div>
+    <div class="btn division bg-grey" onclick="appendOperator('/')">/</div>
+
+    <div class="btn seven" onclick="appendNumber(7)">7</div>
+    <div class="btn eight" onclick="appendNumber(8)">8</div>
+    <div class="btn nine" onclick="appendNumber(9)">9</div>
+    <div class="btn multi bg-orange" onclick="appendOperator('*')">x</div>
+
+    <div class="btn four" onclick="appendNumber(4)">4</div>
+    <div class="btn five" onclick="appendNumber(5)">5</div>
+    <div class="btn six" onclick="appendNumber(6)">6</div>
+    <div class="btn minus bg-orange" onclick="appendOperator('-')">-</div>
+
+    <div class="btn one" onclick="appendNumber(1)">1</div>
+    <div class="btn two" onclick="appendNumber(2)">2</div>
+    <div class="btn three" onclick="appendNumber(3)">3</div>
+    <div class="btn plus bg-orange" onclick="appendOperator('+')">+</div>
+
+    <div class="btn zero" onclick="appendNumber(0)">0</div>
+    <div class="btn point" onclick="appendDecimal()">.</div>
+    <div class="btn equal" onclick="calculate()">=</div>
+  </div>
+</div>
+
+<script src="./script.js"></script>
+
 </body>
 </html>
