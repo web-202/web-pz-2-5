@@ -96,7 +96,7 @@
   const display = document.getElementById("display");
   const buttons = document.getElementById("buttons");
   let currentResult = "0";
-
+  let savedResult;
   buttons.addEventListener("click", handleClick);
 
   function handleClick(event) {
@@ -144,13 +144,13 @@
   }
 
   function saveResult() {
-
+    savedResult = currentResult
     console.log("Result saved:", currentResult);
   }
 
   function pasteResult() {
-    currentResult = '100'
-    display.textContent = currentResult;
+    // currentResult = '100'
+    display.textContent = savedResult;
   }
 </script>
 
