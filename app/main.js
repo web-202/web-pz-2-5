@@ -61,4 +61,3 @@ function pasteResult() {
       screen.textContent = currentInput;
     }
   }
-  
