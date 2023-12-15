@@ -55,10 +55,5 @@ function pasteResult() {
       screen.textContent = currentInput;
     }
   }
-  
-function cube() {
-    if (val !== '') {
-        val = Math.pow(parseFloat(val), 3).toString();
-        tsifra.textContent = val;
-    }
-}
+
+
