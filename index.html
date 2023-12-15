@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+</head>
+
+<body>
+    <div class="display1">
+        <div class="result">
+            <button class="colorMode" id="data-result-saved-clear">Видалити дані</button>
+            <ol id="result-data">
+            </ol>
+
+        </div>
+
+        <div class="dis-calculator">
+            <div class="calculator">
+                <div class="display">
+                    <input type="text" id="result" value="0" disabled>
+                </div>
+                <div class="buttons">
+                    <button onclick="clearDisplay()" class="appButton" id="AC">AC</button>
+                    <button onclick="toggleSign()" class="appButton" id="negativeAndPositive">+/-</button>
+                    <button onclick="calculatePercentage()" class="appButton" id="interest">%</button>
+                    <button onclick="display('/')" class="operation" id="division">/</button>
+                    <button onclick="display('7')" class="btnNum" id="7">7</button>
+                    <button onclick="display('8')" class="btnNum" id="8">8</button>
+                    <button onclick="display('9')" class="btnNum" id="9">9</button>
+                    <button onclick="display('*')" class="operation" id="multi">*</button>
+                    <button onclick="display('4')" class="btnNum" id="4">4</button>
+                    <button onclick="display('5')" class="btnNum" id="5">5</button>
+                    <button onclick="display('6')" class="btnNum" id="6">6</button>
+                    <button onclick="display('-')" class="operation" id="sub">-</button>
+                    <button onclick="display('1')" class="btnNum" id="1">1</button>
+                    <button onclick="display('2')" class="btnNum" id="2">2</button>
+                    <button onclick="display('3')" class="btnNum" id="3">3</button>
+                    <button onclick="display('+')" class="operation" id="add">+</button>
+                    <button onclick="display('0')" class="button0" id="0">0</button>
+                    <button onclick="display('.')" class="btnNum" id="frag">.</button>
+                    <button onclick="calculate()" class="operation" id="exa">=</button>
+                </div>
+            </div>
+            <div class="btncod">
+                <div>
+                    <button id="colorMode" class="colorMode">Змінити колір кнопок</button>
+                </div>
+                <div>
+                    <button id="btnPaste">Вставити</button>
+                </div>
+                <div>
+                    <button id="btnSaved">Зберегти</button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>

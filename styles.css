@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.display1 {
+    display: flex;
+}
+
+.dis-calculator {
+    margin-left: 100px;
+}
+
+.result {
+    margin-top: 50px;
+}
+.btncod {
+    display: block;
+    margin: auto;
+}
+.calculator {
+    width: 260px;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 45px;
+    padding: 10px;
+    background-color: #000000;
+    margin-bottom: 50px;
+}
+
+.display {
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    font-size: 34px;
+    text-align: right;
+    background-color: #000000;
+    border: 0;
+    color: #fff;
+}
+
+.buttons {
+    margin-bottom: 10px;
+}
+
+.buttons button {
+    font-size: 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 25px;
+}
+
+.buttons button:hover {
+    background-color: #777676;
+}
+
+.btnNum {
+    width: 50px;
+    height: 50px;
+    background-color: #545454;
+    color: white;
+}
+
+
+
+.buttons .operation:hover {
+    background-color: rgb(178, 116, 0);
+}
+.operation {
+    
+    background-color: orange;
+    width: 50px;
+    color: white;
+    height: 50px;
+}
+.button0 {
+    background-color: #404040;
+    width: 118px;
+    color: #fff;
+    height: 50px;
+}
+
+.appButton {
+    height: 50px;
+    color: white;
+    background-color: rgb(155, 155, 155);
+    width: 50px;
+}
+
+.colorMode {
+    border-radius: 10px;
+    border: 0;
+    background-color: #00ffff;
+    width: 150px;
+    margin: 10px;
+    height: 30px;
+}
+
+#btnSaved{
+    background-color: #00ffff;
+    width: 150px;
+    border-radius: 10px;
+    border: 0;
+    margin: 10px;
+    height: 30px;
+}
+
+#btnPaste{
+    background-color: #00ffff;
+    width: 150px;
+    border-radius: 10px;
+    border: 0;
+    margin: 10px;
+    height: 30px;
+}
+
+.colorBtn {
+    background-color: aqua;
+    width: 50px;
+    color: white;
+    height: 50px;
+}
+
+.sizeBtn {
+    width: 50px;
+    color: white;
+    height: 50px;
+    background-color: #ff00f2;
+}
+
+.appBtn {
+    height: 50px;
+    background-color: rgb(145, 255, 0);
+    color: white;
+    width: 50px;
+}
+
+.btn0 {
+    background-color: #00ffff;
+    width: 118px;
+    color: #fff;
+    height: 50px;
+}
