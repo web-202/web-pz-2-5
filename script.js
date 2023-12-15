@@ -26,7 +26,7 @@ function clearScreen() {
 
 // Функция для вычисления выражения
 function calculate() {
-    if (currentInput.length > 0 && !isNaN(currentInput[currentInput.length - 1])) {
+    if (currentInput.length > 0 ) {
         const expression = currentInput.join('');
         try {
             currentInput = [eval(expression).toString()];
