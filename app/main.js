@@ -41,7 +41,7 @@ function makeNegative() {
 document.addEventListener("DOMContentLoaded", function() {
     const changeColorButton = document.getElementById("color_change");
     const colorButtons = document.querySelectorAll("button");
-  
+
     changeColorButton.addEventListener("click", function() {
       const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16);
       colorButtons.forEach(function(button) {
@@ -61,4 +61,12 @@ function pasteResult() {
       screen.textContent = currentInput;
     }
   }
-  
+function calculateLogarithm() {
+  if (currentInput !== '') {
+    const result = Math.log(parseFloat(currentInput)).toString();
+    currentInput = result;
+    screen.textContent = result;
+  }
+}
+
+
