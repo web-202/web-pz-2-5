@@ -62,3 +62,12 @@ function changeClass(input, className) {
     var r = document.querySelector(':root');
     r.style.setProperty('--' + className, input.value);
 }
+
+function calculateArcCos() {
+    let number = parseFloat(output.innerHTML);
+    // Використовуйте Math.acos для обчислення арккосинуса в радіанах
+    let resultInRadians = Math.acos(number);
+    // Перетворення результату в градуси
+    let resultInDegrees = (resultInRadians * 180) / Math.PI;
+    output.innerHTML = resultInDegrees.toString();
+}
