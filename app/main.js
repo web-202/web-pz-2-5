@@ -61,12 +61,13 @@ function pasteResult() {
       screen.textContent = currentInput;
     }
   }
-function calculateLogarithm() {
+function calculateLogarithmBase2() {
   if (currentInput !== '') {
-    const result = Math.log(parseFloat(currentInput)).toString();
+    const result = (Math.log2(parseFloat(currentInput))).toString();
     currentInput = result;
     screen.textContent = result;
   }
 }
+
 
 
