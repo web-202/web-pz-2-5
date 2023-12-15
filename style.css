@@ -1,0 +1,46 @@
+.calcul {
+    width: 250px;
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    border-radius: 5px;
+    background-color: black;
+}
+
+.tsifra {
+    width: 100%;
+    height: 60px;
+    text-align: right;
+    font-size: 50px;
+}
+
+.but {
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.equals-button {
+    width: 98px;
+    border-radius: 50%;
+}
+
+.button-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.button { 
+    background-color: orange;
+    border-radius: 20%;
+    text-align: center;
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    font-size: 37px;
+    margin: 5px;
+}
