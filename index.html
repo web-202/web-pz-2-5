@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hulakov Yegor</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="calcul">
+        <div class="tsifra" id="tsifra">0</div>
+        <div class="but">
+            <div class="button-row">
+                <div class="button" onclick="cleartsifra()">C</div>
+                <div class="button" onclick="appendTotsifra('1')">1</div>
+                <div class="button" onclick="appendTotsifra('2')">2</div>
+                <div class="button" onclick="appendTotsifra('3')">3</div>
+            </div>
+            <div class="button-row">
+                <div class="button" onclick="appendTotsifra('4')">4</div>
+                <div class="button" onclick="appendTotsifra('5')">5</div>
+                <div class="button" onclick="appendTotsifra('6')">6</div>      
+                <div class="button" onclick="appendTotsifra('7')">7</div>
+            </div>
+            <div class="button-row">
+                <div class="button" onclick="appendTotsifra('8')">8</div>
+                <div class="button" onclick="appendTotsifra('9')">9</div>
+                <div class="button" onclick="appendTotsifra('0')">0</div>
+                <div class="button" onclick="appendTotsifra('.')">.</div>
+            </div>
+            <div class="button-row">
+                <div class="button" onclick="appendTotsifra('-')">-</div>
+                <div class="button" onclick="appendTotsifra('+')">+</div>
+                <div class="button" onclick="appendTotsifra('*')">X</div>
+                <div class="button" onclick="appendTotsifra('/')">/</div>
+            </div>
+            <div class="button-row">
+                <div class="button" onclick="calculatePercentage()">%</div>
+                <div class="button" onclick="makeminus()">+/-</div>
+                <div class="button" onclick="calcul()">=</div>
+                <div class="button"></div>
+            </div>
+            <div class="row">
+                <button id="color_change">Color</button>
+                <button onclick="saveResult()">Save</button>
+                <button onclick="pasteResult()">Paste</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js">
+    </script>
+</body>
+</html>
