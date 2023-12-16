@@ -84,3 +84,19 @@ function getRandomColor() {
     }
     return color;
 }
+function calculateLog() {
+    const currentValue = parseFloat(document.getElementById('screen').textContent); // Отримуємо значення з екрану
+    const screen = document.getElementById('screen');
+    
+    if (currentValue > 0) {
+      const logResult = Math.log(currentValue) / Math.log(2); // Обчислюємо логарифм за формулою log2(x) = log(x) / log(2)
+      screen.textContent = logResult;
+      currentInput = [logResult.toString()]; // Оновлюємо поточний ввід
+    } else {
+      alert('Логарифм з основою 2 можна розрахувати лише для додатних чисел.');
+    }
+  }
+  
+
+
+
