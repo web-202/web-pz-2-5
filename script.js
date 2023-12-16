@@ -1,5 +1,5 @@
 let currentInput = '0';
-
+let status = 0;
 function updateDisplay() {
   document.getElementById('result').innerText = currentInput;
 }
@@ -12,7 +12,6 @@ function appendNumber(number) {
   }
   updateDisplay();
 }
-
 function appendOperator(operator) {
   currentInput += operator;
   updateDisplay();
@@ -38,4 +37,33 @@ function calculate() {
     currentInput = 'Error';
     updateDisplay();
   }
+  function getCurrentResult() {
+    return document.getElementById('result').textContent;
+  }
+  function saveResult() {
+    const currentResult = getCurrentResult();
+    localStorage.setItem('calculatorResult', currentResult);
+  }
+
+
+  function pasteResult() {
+    const savedResult = localStorage.getItem('calculatorResult');
+    if (savedResult !== null) {
+      document.getElementById('result').textContent = savedResult;
+    }
+  }
+  document.querySelector('.btn.saver').addEventListener('click', saveResult);
+  document.querySelector('.btn.paster').addEventListener('click', pasteResult);
+
+
+  // Function to change the color scheme
+  document.addEventListener('DOMContentLoaded', function () {
+    const body = document.body;
+    const colorSchemeSelect = document.getElementById('colorScheme');
+
+    function changeColorScheme() {
+      const selectedColorScheme = colorSchemeSelect.value;
+      body.style.backgroundColor = selectedColorScheme === 'dark' ? '#333' : '#fff';
+    }
+  });
 }
