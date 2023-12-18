@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
@@ -50,8 +50,20 @@
     </select>
   </label>
 </div>
+  <script>
+    function changeColorScheme() {
+      const calcContainer = document.querySelector('.calc');
+      const colorSchemeSelect = document.getElementById('colorScheme');
+      const selectedColorScheme = colorSchemeSelect.value;
 
-  <script src="./script.js"></script>
+      // Change background color
+      calcContainer.style.backgroundColor = selectedColorScheme === 'dark' ? '#333' : '#fff';
+
+      // Change text color
+      calcContainer.style.color = selectedColorScheme === 'dark' ? '#fff' : '#000';
+    }
+  </script>
+  <script src="../js/script.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </div>
 </body>

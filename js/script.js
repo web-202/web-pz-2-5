@@ -55,15 +55,4 @@ function calculate() {
   document.querySelector('.btn.saver').addEventListener('click', saveResult);
   document.querySelector('.btn.paster').addEventListener('click', pasteResult);
 
-
-  // Function to change the color scheme
-  document.addEventListener('DOMContentLoaded', function () {
-    const body = document.body;
-    const colorSchemeSelect = document.getElementById('colorScheme');
-
-    function changeColorScheme() {
-      const selectedColorScheme = colorSchemeSelect.value;
-      body.style.backgroundColor = selectedColorScheme === 'dark' ? '#333' : '#fff';
-    }
-  });
 }
