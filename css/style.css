@@ -137,11 +137,13 @@
   grid-column: span 1;
 }
 .save {
-  grid-column: span 2; /* Adjust this to span 2 columns */
-  grid-row: 2; /* Add this to move to the second row */
+  grid-column: span 1;
 }
 
 .paste {
-  grid-column: span 2; /* Adjust this to span 2 columns */
-  grid-row: 3;
+  grid-column: span 1;
+}
+
+.check {
+  grid-column: span 1;
 }
