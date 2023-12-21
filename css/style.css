@@ -1,0 +1,149 @@
+.calc {
+  margin: 50px auto;
+  padding: 18px;
+  width: 300px;
+  height: 500px;
+  border: 1px solid;
+  border-radius: 20px;
+  background: #000;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 4px 4px 4px #4f4f4f;
+}
+
+.calc-screen {
+  display: grid;
+  align-items: end;
+  height: 125px;
+  padding: 10px;
+  margin-bottom: 25px;
+}
+
+.calc-screen p {
+  text-align: right;
+  font-size: 4rem;
+  margin: 0;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 7px;
+}
+
+.buttons button,
+.color-options select {
+  margin: 5px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+
+.color-options label {
+  margin-right: 5px;
+}
+
+.btn {
+  width: 60px;
+  height: 60px;
+  background: #333;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.btn.zero {
+  grid-column: span 2;
+  width: 100%;
+  border-radius: 34px;
+}
+
+.btn:hover {
+  filter: brightness(120%);
+}
+
+.btn:active {
+  filter: brightness(90%);
+}
+
+.btn.bg-grey {
+  background: #a6a6a6;
+}
+
+.btn.bg-orange {
+  background: #ff9501;
+}
+/* Grid Areas */
+.ac {
+  grid-column: span 2;
+}
+.plus-minus {
+  grid-column: span 1;
+}
+.percent {
+  grid-column: span 1;
+}
+.division {
+  grid-column: span 1;
+}
+.seven {
+  grid-column: span 1;
+}
+.eight {
+  grid-column: span 1;
+}
+.nine {
+  grid-column: span 1;
+}
+.multi {
+  grid-column: span 1;
+}
+.four {
+  grid-column: span 1;
+}
+.five {
+  grid-column: span 1;
+}
+.six {
+  grid-column: span 1;
+}
+.minus {
+  grid-column: span 1;
+}
+.one {
+  grid-column: span 1;
+}
+
+.two {
+  grid-column: span 1;
+}
+.three {
+  grid-column: span 1;
+}
+.plus {
+  grid-column: span 1;
+}
+.zero {
+  grid-column: span 2;
+}
+.dot {
+  grid-column: span 1;
+}
+.equal {
+  grid-column: span 1;
+}
+.save {
+  grid-column: span 1;
+}
+
+.paste {
+  grid-column: span 1;
+}
+
+.check {
+  grid-column: span 1;
+}
